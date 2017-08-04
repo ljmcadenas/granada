@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+h1, h2 {
+    color: #764B29;
+}
+
+button.btn-circle {
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+button.btn-fixed {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.relative {
+    color: red;
+    position: relative !important;
+}

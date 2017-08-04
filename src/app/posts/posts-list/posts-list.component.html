@@ -1,0 +1,12 @@
+<section>
+    <div class="relative" >
+        <h2>Posts</h2>
+        <button type="button" class="btn btn-success btn-circle btn-fixed" title="Crear Post" [routerLink]="['create']">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <posts-list-item *ngFor="let post of posts | slice: 0: [limit]" [post]="post" (onDelete)="delete($event)"></posts-list-item>
+
+    <button type="button" class="btn btn-info btn-block" (click)="viewMore()">VER MAS</button>
+</section>

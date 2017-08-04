@@ -1,0 +1,29 @@
+<div class="relative" *ngIf="isUpdate">
+    <h2>Post ID: {{ post.id }}</h2>
+    <button type="button" class="btn btn-danger btn-circle btn-fixed" title="Eliminar Post" (click)="delete()">
+        <i class="fa fa-remove" aria-hidden="true"></i>
+    </button>
+</div>
+<div>
+    <form [formGroup]="postForm" novalidate (ngSubmit)="onSubmit()">
+        <div class="form-group" [ngClass]="{'has-danger': title.invalid}">
+            <label for="title">Título</label>
+            <input type="text" class="form-control" id="title" placeholder="Título..." formControlName="title">
+            <div class="form-control-feedback" *ngIf="title.invalid">El título es requerido.</div>
+        </div>
+        <div class="form-group">
+            <label for="body">Cuerpo</label>
+            <textarea class="form-control" id="body" rows="8" placeholder="Cuerpo..." formControlName="body"></textarea>
+        </div>
+
+        <button type="button" class="btn btn-secondary" [routerLink]="['../']">
+            <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+            Volver
+        </button>
+        <button type="submit" class="btn btn-primary" [disabled]="postForm.invalid">
+            <span *ngIf="isUpdate">Guardar</span>
+            <span *ngIf="!isUpdate">Crear</span>
+            <i class="fa fa-save" aria-hidden="true"></i>
+        </button>
+    </form>
+</div>

@@ -1,0 +1,18 @@
+<article>
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">{{ post.title }}</h4>
+      <h6 class="card-subtitle mb-2 text-muted">By User ID: {{ post.userId }}</h6>
+      <p class="card-text">S{{ post.body }}</p>
+
+      <button type="button" class="btn btn-outline-danger" (click)="delete(post)">
+        <i class="fa fa-remove" aria-hidden="true"></i>
+        Eliminar
+      </button>
+      <button type="button" class="btn btn-outline-primary" [routerLink]="[post.id]">
+        Editar
+        <i class="fa fa-edit" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</article>
