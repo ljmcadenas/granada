@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "getjob": "ng serve --open",
+    "getjob": "npm install; ng serve --open",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
